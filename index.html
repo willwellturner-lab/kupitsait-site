@@ -8,568 +8,134 @@
 <meta name="description" content="Создадим современный сайт для вашего бизнеса: изучение ниши, тексты, онлайн-запись, формы заявок и приём оплаты.">
 <style>
 :root{--ink:#111820;--muted:#65707b;--green:#12a765;--green2:#087d4b;--line:#e6e9ed;--soft:#f4f6f8;--dark:#11191f;--radius:22px;--max:1440px}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.45}
-a{color:inherit;text-decoration:none}
-button,input,textarea{font:inherit}
-.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
-header{height:76px;display:flex;align-items:center;border-bottom:1px solid #edf0f2;background:rgba(255,255,255,.92);position:sticky;top:0;z-index:20;backdrop-filter:blur(16px)}
-.nav{display:flex;align-items:center;gap:26px}
-.brand{font-size:24px;font-weight:900;letter-spacing:-1.2px;white-space:nowrap}
-.brand em{font-style:normal;color:var(--green)}
-.cross{color:#9ba3aa;font-size:21px}
-.partner{display:flex;align-items:center;gap:10px;min-width:0}
-.partner-mark{width:112px;height:auto;max-height:42px;object-fit:contain;display:block;flex:0 0 auto}
-.bloknot-wordmark{display:inline-block;font-size:25px;font-weight:900;letter-spacing:-1.1px;line-height:1;color:#17211d}
-.bloknot-wordmark .bloknot-green{color:#159957}
-.partner-card .bloknot-wordmark{font-size:22px}
-.footer-partner .bloknot-wordmark{font-size:20px}
-.partner-card .partner-mark{width:40px;height:40px;object-fit:contain;background:#fff;border-radius:8px;padding:3px}
-.footer-partner .partner-mark{width:76px;height:auto;max-height:35px;object-fit:contain;background:transparent;border-radius:0;box-shadow:none}
-.partner strong{display:block;font-size:13px}
-.partner small{display:block;font-size:10px;color:var(--muted)}
-.links{display:flex;gap:30px;align-items:center;margin-left:auto;font-size:13px;color:#3c454d}
-.btn{border:0;border-radius:15px;padding:15px 22px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:750;cursor:pointer;transition:.2s}
-.btn:hover{transform:translateY(-2px)}
-.btn-dark{background:#11191f;color:#fff;box-shadow:0 5px 14px #11191f14}
-.btn-light{border:1px solid #dfe4e8;background:#fff;color:var(--ink)}
-.btn-green{background:var(--green);color:#fff}
-.btn-sm{padding:12px 18px;border-radius:13px;font-size:13px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.45}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
+header{height:76px;display:flex;align-items:center;border-bottom:1px solid #edf0f2;background:rgba(255,255,255,.92);position:sticky;top:0;z-index:20;backdrop-filter:blur(16px)}.nav{display:flex;align-items:center;gap:26px}.brand{font-size:24px;font-weight:900;letter-spacing:-1.2px;white-space:nowrap}.brand em{font-style:normal;color:var(--green)}.cross{color:#9ba3aa;font-size:21px}.partner{display:flex;align-items:center;gap:10px;min-width:220px}.partner-mark{width:112px;height:auto;max-height:42px;object-fit:contain;display:block;flex:0 0 auto}.bloknot-wordmark{display:inline-block;font-size:25px;font-weight:900;letter-spacing:-1.1px;line-height:1;color:#17211d}.bloknot-wordmark .bloknot-green{color:#159957}.partner-card .bloknot-wordmark{font-size:22px}.footer-partner .bloknot-wordmark{font-size:20px}.partner-card .partner-mark{width:40px;height:40px;object-fit:contain;background:#fff;border-radius:8px;padding:3px}.footer-partner .partner-mark{width:76px;height:auto;max-height:35px;object-fit:contain;background:transparent;border-radius:0;box-shadow:none}.partner strong{display:block;font-size:13px}.partner small{display:block;font-size:10px;color:var(--muted)}.links{display:flex;gap:30px;align-items:center;margin-left:auto;font-size:13px;color:#3c454d}.btn{border:0;border-radius:15px;padding:15px 22px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:750;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn-dark{background:#11191f;color:#fff;box-shadow:0 5px 14px #11191f14}.btn-light{border:1px solid #dfe4e8;background:#fff;color:var(--ink)}.btn-green{background:var(--green);color:#fff}.btn-sm{padding:12px 18px;border-radius:13px;font-size:13px}
+.hero{position:relative;overflow:hidden;min-height:510px;background:radial-gradient(ellipse at 78% 45%,#dfe4e6 0%,#f5f6f7 32%,#fff 64%)}.hero-grid{display:grid;grid-template-columns: .95fr 1.05fr;align-items:center;min-height:510px;gap:15px}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#f0f5f1;border:1px solid #e6eee8;border-radius:999px;padding:7px 12px;font-size:11px;font-weight:700;color:#3b5848}.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}h1{font-size:clamp(42px,4.1vw,68px);letter-spacing:-2.6px;line-height:1.01;margin:18px 0 17px;font-weight:850;max-width:680px}h1 span{color:var(--green)}.lead{font-size:17px;line-height:1.5;color:#3e4850;max-width:520px;margin:0 0 24px}.benefits{display:flex;gap:22px;margin:26px 0 27px}.benefit{display:flex;align-items:flex-start;gap:9px;font-size:12px;line-height:1.35;max-width:150px}.ico{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border:1px solid #e8ecef;background:#fff;border-radius:11px;font-size:17px;box-shadow:0 4px 12px #11191f06}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero-actions .btn{min-width:190px}.social-proof{display:flex;align-items:center;gap:12px;margin-top:22px;font-size:11px;color:#4c555c}.avatars{display:flex}.avatar{width:31px;height:31px;border-radius:50%;border:2px solid white;margin-left:-7px;background:linear-gradient(135deg,#c6d6d0,#566e64)}.avatar:first-child{margin-left:0}.avatar:nth-child(2){background:linear-gradient(135deg,#edd5c2,#80695d)}.avatar:nth-child(3){background:linear-gradient(135deg,#d6dce6,#5c687a)}.avatar:nth-child(4){background:linear-gradient(135deg,#c6b5a8,#6e5346)}.hero-art{height:460px;position:relative;display:flex;align-items:center;justify-content:center}.laptop{position:absolute;width:min(94%,690px);height:355px;right:0;top:47px;transform:perspective(1100px) rotateY(-8deg) rotateX(2deg);border:10px solid #171c20;border-bottom-width:18px;border-radius:18px 18px 9px 9px;background:#fff;box-shadow:0 28px 45px #202a332b;overflow:hidden}.laptop:after{content:"";position:absolute;left:-7%;right:-7%;height:18px;bottom:-18px;background:linear-gradient(#d7dade,#8c9298,#d9dde0);border-radius:0 0 24px 24px}.screen{height:100%;padding:20px;background:linear-gradient(90deg,rgba(244,226,215,.97) 0%,rgba(244,226,215,.88) 43%,rgba(244,226,215,.05) 75%),url(https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=90) center 35%/cover;position:relative;overflow:hidden}.screen-nav{display:flex;justify-content:space-between;font-size:10px;font-weight:700}.screen-copy{position:absolute;top:29%;left:7%;width:44%;z-index:2;text-shadow:0 1px 8px rgba(255,255,255,.2)}.screen-copy small{font-size:9px;letter-spacing:2px}.screen-copy h3{font-size:29px;line-height:1.08;margin:13px 0;font-weight:800;letter-spacing:-1px}.screen-copy p{font-size:10px;color:#4e4542}.screen-cta{display:inline-block;background:#fff;padding:9px 13px;border-radius:8px;font-size:10px;font-weight:700;margin-top:9px}.plant{position:absolute;right:4%;bottom:-8%;width:46%;height:90%;background:radial-gradient(ellipse at 48% 80%,#8b6d59 0 7%,transparent 8%),radial-gradient(ellipse at 60% 30%,#8d9a7e 0 18%,transparent 19%),radial-gradient(ellipse at 38% 38%,#71866d 0 20%,transparent 21%),radial-gradient(ellipse at 65% 55%,#a6b39a 0 20%,transparent 21%);filter:drop-shadow(0 10px 10px #5b4a3b28)}.phone{position:absolute;right:0;bottom:28px;width:178px;height:315px;background:#11191f;border:6px solid #171b20;border-radius:29px;box-shadow:0 25px 35px #11191f45;z-index:3;padding:7px}.phone-screen{height:100%;border-radius:19px;background:#fff;padding:22px 10px 10px;position:relative;overflow:hidden}.notch{position:absolute;top:5px;left:50%;transform:translateX(-50%);width:65px;height:14px;background:#11191f;border-radius:0 0 10px 10px}.phone-screen h4{font-size:15px;line-height:1.1;margin:17px 0 10px}.phone-screen p{font-size:8px;color:#7b848a}.calendar{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin:12px 0}.calendar span{background:#f0f2f4;border-radius:5px;text-align:center;padding:6px 0;font-size:7px}.calendar span.active{background:#11191f;color:#fff}.phone-cta{background:#11191f;color:#fff;border-radius:8px;text-align:center;padding:9px;font-size:9px;font-weight:700}.float-card{position:absolute;z-index:4;background:#fff;border:1px solid #e7eaed;border-radius:14px;padding:12px 15px;box-shadow:0 12px 30px #11191f13;font-size:11px;font-weight:750}.float-card small{display:block;font-weight:500;color:var(--muted);font-size:9px}.float-one{top:57px;left:2%}.float-two{right:0;top:85px}.stats{background:var(--dark);color:#fff;border-radius:25px;padding:24px 5%;display:grid;grid-template-columns:repeat(3,1fr) 1.6fr;gap:24px;align-items:center;margin-top:-1px}.stat strong{display:block;font-size:29px;letter-spacing:-.8px}.stat span{display:block;font-size:11px;color:#c3cbd1;max-width:130px}.stars{color:#ffc83d;letter-spacing:2px;font-size:16px}.partner-card{border:1px solid #3c454d;background:#20282e;border-radius:18px;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}.partner-card small{display:block;color:#aab4bb;font-size:10px}.partner-card strong{font-size:13px}.partner-card .partner-mark{display:inline-grid;margin-right:8px;vertical-align:middle}.circle-arrow{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:#313b43;color:white;font-size:18px;flex-shrink:0}
+section{padding:28px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px}.section-head h2{font-size:clamp(25px,2.4vw,36px);letter-spacing:-1.2px;margin:0;font-weight:850}.section-head p{margin:6px 0 0;color:var(--muted);font-size:13px}.sub-link{font-size:12px;font-weight:700;white-space:nowrap}.portfolio{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.work-card{height:190px;position:relative;overflow:hidden;border-radius:16px;background:#dce4e0;color:#fff;isolation:isolate}.work-card:before{content:"";position:absolute;inset:0;background:var(--art);background-size:cover;background-position:center;z-index:-2;transition:transform .4s}.work-card:hover:before{transform:scale(1.06)}.work-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,#10181ee8 100%);z-index:-1}.work-label{position:absolute;left:16px;right:16px;bottom:15px}.work-label small{font-size:9px;opacity:.8}.work-label strong{display:block;font-size:16px;margin:4px 0}.work-label span{font-size:10px;opacity:.85}.work-arrow{position:absolute;right:13px;bottom:13px;width:31px;height:31px;border-radius:50%;background:#ffffff24;display:grid;place-items:center}.work-card:nth-child(1){--art:linear-gradient(130deg,#b5a091,#ead8cb 40%,#796a5e)}.work-card:nth-child(2){--art:linear-gradient(130deg,#071f1b,#225548 45%,#d0c6b5)}.work-card:nth-child(3){--art:linear-gradient(140deg,#8aa5b7,#dce5e6 40%,#73876c)}.work-card:nth-child(4){--art:linear-gradient(130deg,#7b8286,#242c33 50%,#bdc3c5)}.work-art{position:absolute;inset:0;opacity:.75;background:radial-gradient(ellipse at 70% 35%,#ffffff55 0 8%,transparent 9%),linear-gradient(125deg,transparent 40%,#ffffff20 41% 42%,transparent 43%)}.work-card:nth-child(1) .work-art{background:radial-gradient(ellipse at 68% 36%,#e6c5b5 0 15%,transparent 16%),radial-gradient(ellipse at 67% 70%,#4f5a4c 0 22%,transparent 23%)}.work-card:nth-child(2) .work-art{background:radial-gradient(ellipse at 72% 30%,#c3a88c 0 11%,transparent 12%),radial-gradient(ellipse at 72% 55%,#131c1b 0 25%,transparent 26%)}.work-card:nth-child(3) .work-art{background:linear-gradient(160deg,transparent 45%,#f3f3ed 46% 65%,#7c8a7a 66%)}.work-card:nth-child(4) .work-art{background:radial-gradient(ellipse at 67% 27%,#a5abae 0 10%,transparent 11%),linear-gradient(90deg,transparent 55%,#171b1e 56% 80%,transparent 81%)}
+.features{display:grid;grid-template-columns:1fr 280px;gap:25px;align-items:center}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 18px}.feature{display:flex;gap:10px;align-items:center;font-size:11px;font-weight:650}.feature .ico{border-radius:12px;box-shadow:0 5px 15px #11191f08;flex-shrink:0}.feature small{display:block;color:var(--muted);font-size:10px;font-weight:450;margin-top:3px}.note-card{background:#f1f3f5;border-radius:23px;padding:22px;display:flex;gap:14px;align-items:center;min-height:145px}.note-illustration{width:72px;height:86px;border-radius:20px;background:linear-gradient(145deg,#d8e0dc,#aab8b0);position:relative;flex-shrink:0}.note-illustration:before{content:"✓";position:absolute;right:-6px;top:-6px;width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:white;font-weight:900}.note-card strong{font-size:14px;line-height:1.2}.note-card p{font-size:11px;color:#5c656c;margin-bottom:0}
+.pricing{background:var(--dark);color:#fff;border-radius:28px;padding:32px 34px;overflow:hidden;position:relative}.pricing:before{content:"";position:absolute;width:420px;height:420px;left:-180px;bottom:-280px;background:radial-gradient(circle,#11663f 0,transparent 70%);pointer-events:none}.pricing-grid{display:grid;grid-template-columns:.78fr 1fr 1fr;gap:18px;position:relative}.pricing-intro{padding:12px 12px 12px 0}.pricing-intro h2{font-size:clamp(28px,2.5vw,38px);line-height:1.08;letter-spacing:-1.3px;margin:0 0 14px}.pricing-intro p{font-size:12px;color:#b7c0c6}.compare{margin-top:25px;display:flex;align-items:center;gap:10px;font-size:11px;color:#dce1e5}.switch{width:38px;height:22px;background:#3b454c;border-radius:20px;position:relative}.switch:before{content:"";position:absolute;left:3px;top:3px;width:16px;height:16px;background:white;border-radius:50%}.price-card{background:#1c252b;border:1px solid #414a50;border-radius:20px;padding:23px 22px;display:flex;flex-direction:column;min-height:370px;position:relative}.price-card.featured{border-color:#18b875;background:linear-gradient(145deg,#183a2d,#18262a 60%)}.tag{position:absolute;right:16px;top:15px;background:#16c779;color:#052b1b;border-radius:999px;padding:6px 11px;font-size:10px;font-weight:850}.price-card h3{margin:0 0 3px;font-size:19px}.price{font-size:36px;letter-spacing:-1.5px;font-weight:850;margin:0 0 7px}.price-card p{font-size:11px;color:#b8c2c8;margin:0 0 15px;max-width:310px}.checklist{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:8px;font-size:11px;color:#e3e8eb}.checklist li:before{content:"✓";color:#20d78b;font-weight:900;margin-right:9px}.price-card .btn{margin-top:auto;width:100%;font-size:12px;padding:13px}.price-card .btn-white{background:#fff;color:#11191f}.price-card .btn-outline{border:1px solid #475158;color:#fff;background:#11191f}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.step{border:1px solid #e7eaed;background:#fff;border-radius:17px;padding:19px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 6px 20px #11191f05}.step-num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#e7ecef;font-size:12px;font-weight:850;flex-shrink:0}.step strong{font-size:12px;display:block;margin:2px 0 5px}.step p{margin:0;color:var(--muted);font-size:10px}.final-cta{background:linear-gradient(105deg,#eef7f0,#f8faf8 60%,#e8f3eb);border-radius:25px;padding:32px 36px;display:grid;grid-template-columns:1.4fr 1fr;gap:25px;align-items:center;margin:18px 0 30px}.final-cta h2{font-size:clamp(27px,3vw,42px);letter-spacing:-1.5px;line-height:1.08;margin:0 0 10px}.final-cta p{font-size:13px;color:#5c6861;margin:0}.final-cta-action{display:flex;justify-content:flex-start}.final-cta-action .btn{min-width:220px}.cta-form{display:flex;gap:8px;flex-wrap:wrap}.cta-form input{min-width:0;flex:1;border:1px solid #dce5df;background:#fff;border-radius:13px;padding:14px 15px;outline:none}.cta-form input:focus{border-color:var(--green)}.micro{font-size:10px;color:#68766e;margin-top:9px}.micro span{color:var(--green);margin-right:4px}footer{padding:20px 0 30px;border-top:1px solid #edf0f2}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-row p{font-size:10px;color:var(--muted);margin:0}.footer-partner{display:flex;align-items:center;gap:8px;font-size:11px;color:#4b555c}.footer-partner .partner-mark{width:26px;height:26px;border-radius:8px;font-size:11px}
+.modal{position:fixed;inset:0;background:#0b1118a8;display:none;place-items:center;padding:20px;z-index:50}.modal.open{display:grid}.modal-box{background:#fff;border-radius:22px;padding:28px;width:min(480px,100%);box-shadow:0 30px 80px #0004}.modal-head{display:flex;justify-content:space-between;align-items:center}.modal-head h3{margin:0;font-size:22px}.close{border:0;background:#f0f2f4;border-radius:50%;width:36px;height:36px;cursor:pointer}.modal-box p{font-size:13px;color:var(--muted)}.modal-box label{display:block;font-size:12px;font-weight:700;margin:14px 0 6px}.modal-box input,.modal-box textarea{width:100%;border:1px solid #dfe4e8;border-radius:11px;padding:12px;outline:none}.modal-box textarea{min-height:80px;resize:vertical}.modal-box .btn{width:100%;margin-top:16px}.modal-note{font-size:10px!important}
+@media(max-width:1000px){.wrap{width:min(100% - 36px,var(--max))}.links{gap:15px}.hero-grid{grid-template-columns:1fr 1fr}.hero-art{transform:scale(.92);transform-origin:center right;margin-left:-30px}.benefits{gap:12px}.stats{grid-template-columns:repeat(3,1fr)}.partner-card{grid-column:1/-1}.portfolio{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(4,1fr)}.pricing-grid{grid-template-columns:1fr 1fr}.pricing-intro{grid-column:1/-1}.pricing-intro h2{max-width:420px}.steps{grid-template-columns:repeat(2,1fr)}}
+.messenger-choices{display:grid;gap:12px;margin-top:22px}.messenger-choices .btn{width:100%;text-decoration:none;text-align:center}.btn-telegram{background:#229ED9;color:#fff}.btn-max{background:#246BFD;color:#fff;border:0}.modal-note{font-size:11px!important;line-height:1.5;margin-top:6px}
+@media(max-width:700px){header{height:64px}.wrap{width:calc(100% - 30px)}.nav{gap:10px}.brand{font-size:20px}.cross,.partner,.links{display:none}.nav>.btn{margin-left:auto}.hero{background:radial-gradient(ellipse at 70% 45%,#e5e9e9 0%,#f8f9f9 45%,#fff 75%)}.hero-grid{display:flex;flex-direction:column;align-items:stretch;gap:0;padding-top:29px;min-height:unset}.hero-copy{position:relative;z-index:2}h1{font-size:43px;letter-spacing:-1.8px;margin:15px 0}.lead{font-size:15px}.benefits{gap:8px;justify-content:space-between;margin:21px 0}.benefit{font-size:10px;display:block;max-width:31%}.benefit .ico{margin-bottom:7px}.hero-actions{display:grid;grid-template-columns:1fr 1fr}.hero-actions .btn{min-width:0;padding:14px 8px;font-size:12px}.social-proof{margin-top:16px}.hero-art{height:300px;width:100%;margin:0;transform:none}.laptop{width:92%;height:220px;top:38px;right:3%;border-width:6px;border-bottom-width:12px;border-radius:12px}.laptop:after{bottom:-12px;height:12px}.screen{padding:11px}.screen-nav{font-size:7px}.screen-copy{top:26%;left:6%;width:48%}.screen-copy small{font-size:6px}.screen-copy h3{font-size:17px;margin:8px 0}.screen-copy p{font-size:7px}.screen-cta{font-size:7px;padding:6px}.phone{width:110px;height:204px;right:0;bottom:10px;border-width:4px;border-radius:20px;padding:4px}.phone-screen{border-radius:14px;padding:15px 6px 6px}.notch{width:40px;height:9px;top:3px}.phone-screen h4{font-size:10px;margin:10px 0 6px}.phone-screen p{font-size:6px}.calendar{gap:3px;margin:7px 0}.calendar span{font-size:5px;padding:4px 0}.phone-cta{font-size:6px;padding:6px}.float-card{font-size:8px;padding:8px 9px}.float-card small{font-size:7px}.float-one{top:10px;left:0}.float-two{right:0;top:45px}.stats{border-radius:18px;padding:18px 16px;gap:12px;grid-template-columns:repeat(3,1fr)}.stat strong{font-size:23px}.stat span{font-size:9px}.stars{font-size:12px}.partner-card{padding:12px;grid-column:1/-1}.partner-card strong{font-size:11px}.partner-card small{font-size:8px}.section-head{align-items:flex-start}.section-head h2{font-size:26px}.section-head p{font-size:11px}.sub-link{font-size:10px;padding-top:7px}.portfolio{gap:9px}.work-card{height:155px;border-radius:13px}.work-label{left:11px;right:11px;bottom:11px}.work-label strong{font-size:13px}.work-label span{font-size:9px}.features{gap:17px}.feature-grid{grid-template-columns:repeat(2,1fr);gap:14px 10px}.feature{font-size:10px}.feature small{font-size:9px}.note-card{padding:16px;min-height:120px}.note-illustration{width:55px;height:65px}.pricing{padding:22px 15px;border-radius:22px}.pricing-grid{grid-template-columns:1fr;gap:12px}.pricing-intro{padding:5px 4px 10px}.pricing-intro h2{font-size:30px}.price-card{min-height:unset;padding:20px 17px}.price-actions{gap:8px}.price-actions .btn{font-size:12px}.price{font-size:32px}.price-card p{max-width:75%}.checklist{gap:7px}.steps{grid-template-columns:1fr 1fr;gap:8px}.step{padding:13px 10px;gap:9px}.step-num{width:30px;height:30px;font-size:10px}.step strong{font-size:11px}.step p{font-size:9px}.final-cta{grid-template-columns:1fr;padding:24px 18px;gap:17px;border-radius:20px}.final-cta h2{font-size:30px}.final-cta p{font-size:12px}.final-cta-action .btn{width:100%}.cta-form{display:grid;grid-template-columns:1fr}.cta-form input,.cta-form .btn{width:100%}.footer-row{align-items:flex-start;flex-direction:column}.footer-partner{order:-1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 
-.hero{position:relative;overflow:hidden;min-height:510px;background:radial-gradient(ellipse at 78% 45%,#dfe4e6 0%,#f5f6f7 32%,#fff 64%)}
-.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;min-height:510px;gap:15px}
-.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#f0f5f1;border:1px solid #e6eee8;border-radius:999px;padding:7px 12px;font-size:11px;font-weight:700;color:#3b5848}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
-h1{font-size:clamp(42px,4.1vw,68px);letter-spacing:-2.6px;line-height:1.01;margin:18px 0 17px;font-weight:850;max-width:680px}
-h1 span{color:var(--green)}
-.lead{font-size:17px;line-height:1.5;color:#3e4850;max-width:520px;margin:0 0 24px}
-.benefits{display:flex;gap:22px;margin:26px 0 27px}
-.benefit{display:flex;align-items:flex-start;gap:9px;font-size:12px;line-height:1.35;max-width:150px}
-.ico{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border:1px solid #e8ecef;background:#fff;border-radius:11px;font-size:17px;box-shadow:0 4px 12px #11191f06}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero-actions .btn{min-width:190px}
-.social-proof{display:flex;align-items:center;gap:12px;margin-top:22px;font-size:11px;color:#4c555c}
-.avatars{display:flex}
-.avatar{width:31px;height:31px;border-radius:50%;border:2px solid white;margin-left:-7px;background:linear-gradient(135deg,#c6d6d0,#566e64)}
-.avatar:first-child{margin-left:0}
-.avatar:nth-child(2){background:linear-gradient(135deg,#edd5c2,#80695d)}
-.avatar:nth-child(3){background:linear-gradient(135deg,#d6dce6,#5c687a)}
-.avatar:nth-child(4){background:linear-gradient(135deg,#c6b5a8,#6e5346)}
-.hero-art{height:460px;position:relative;display:flex;align-items:center;justify-content:center}
-.laptop{position:absolute;width:min(94%,690px);height:355px;right:0;top:47px;transform:perspective(1100px) rotateY(-8deg) rotateX(2deg);border:10px solid #171c20;border-bottom-width:18px;border-radius:18px 18px 9px 9px;background:#fff;box-shadow:0 28px 45px #202a332b;overflow:hidden}
-.laptop:after{content:"";position:absolute;left:-7%;right:-7%;height:18px;bottom:-18px;background:linear-gradient(#d7dade,#8c9298,#d9dde0);border-radius:0 0 24px 24px}
-.screen{height:100%;padding:20px;background:linear-gradient(120deg,#f2e6df,#e7d3c9 60%,#d9bdb0);position:relative;overflow:hidden}
-.screen-nav{display:flex;justify-content:space-between;font-size:10px;font-weight:700}
-.screen-copy{position:absolute;top:29%;left:7%;width:44%;z-index:2}
-.screen-copy small{font-size:9px;letter-spacing:2px}
-.screen-copy h3{font-size:29px;line-height:1.08;margin:13px 0;font-weight:800;letter-spacing:-1px}
-.screen-copy p{font-size:10px;color:#4e4542}
-.screen-cta{display:inline-block;background:#fff;padding:9px 13px;border-radius:8px;font-size:10px;font-weight:700;margin-top:9px}
-.plant{position:absolute;right:4%;bottom:-8%;width:46%;height:90%;background:radial-gradient(ellipse at 48% 80%,#8b6d59 0 7%,transparent 8%),radial-gradient(ellipse at 60% 30%,#8d9a7e 0 18%,transparent 19%),radial-gradient(ellipse at 38% 38%,#71866d 0 20%,transparent 21%),radial-gradient(ellipse at 65% 55%,#a6b39a 0 20%,transparent 21%);filter:drop-shadow(0 10px 10px #5b4a3b28)}
-.phone{position:absolute;right:0;bottom:28px;width:178px;height:315px;background:#11191f;border:6px solid #171b20;border-radius:29px;box-shadow:0 25px 35px #11191f45;z-index:3;padding:7px}
-.phone-screen{height:100%;border-radius:19px;background:#fff;padding:22px 10px 10px;position:relative;overflow:hidden}
-.notch{position:absolute;top:5px;left:50%;transform:translateX(-50%);width:65px;height:14px;background:#11191f;border-radius:0 0 10px 10px}
-.phone-screen h4{font-size:15px;line-height:1.1;margin:17px 0 10px}
-.phone-screen p{font-size:8px;color:#7b848a}
-.calendar{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin:12px 0}
-.calendar span{background:#f0f2f4;border-radius:5px;text-align:center;padding:6px 0;font-size:7px}
-.calendar span.active{background:#11191f;color:#fff}
-.phone-cta{background:#11191f;color:#fff;border-radius:8px;text-align:center;padding:9px;font-size:9px;font-weight:700}
-.float-card{position:absolute;z-index:4;background:#fff;border:1px solid #e7eaed;border-radius:14px;padding:12px 15px;box-shadow:0 12px 30px #11191f13;font-size:11px;font-weight:750}
-.float-card small{display:block;font-weight:500;color:var(--muted);font-size:9px}
-.float-one{top:57px;left:2%}
-.float-two{right:0;top:85px}
-.stats{background:var(--dark);color:#fff;border-radius:25px;padding:24px 5%;display:grid;grid-template-columns:repeat(3,1fr) 1.6fr;gap:24px;align-items:center;margin-top:-1px}
-.stat strong{display:block;font-size:29px;letter-spacing:-.8px}
-.stat span{display:block;font-size:11px;color:#c3cbd1;max-width:130px}
-.stars{color:#ffc83d;letter-spacing:2px;font-size:16px}
-.partner-card{border:1px solid #3c454d;background:#20282e;border-radius:18px;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.partner-card small{display:block;color:#aab4bb;font-size:10px}
-.partner-card strong{font-size:13px}
-.partner-card .partner-mark{display:inline-grid;margin-right:8px;vertical-align:middle}
-.circle-arrow{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:#313b43;color:white;font-size:18px;flex-shrink:0}
-
-section{padding:28px 0}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px}
-.section-head h2{font-size:clamp(25px,2.4vw,36px);letter-spacing:-1.2px;margin:0;font-weight:850}
-.section-head p{margin:6px 0 0;color:var(--muted);font-size:13px}
-.sub-link{font-size:12px;font-weight:700;white-space:nowrap}
-.portfolio{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.work-card{height:190px;position:relative;overflow:hidden;border-radius:16px;background:#dce4e0;color:#fff;isolation:isolate}
-.work-card:before{content:"";position:absolute;inset:0;background:var(--art);background-size:cover;background-position:center;z-index:-2;transition:transform .4s}
-.work-card:hover:before{transform:scale(1.06)}
-.work-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,#10181ee8 100%);z-index:-1}
-.work-label{position:absolute;left:16px;right:16px;bottom:15px}
-.work-label small{font-size:9px;opacity:.8}
-.work-label strong{display:block;font-size:16px;margin:4px 0}
-.work-label span{font-size:10px;opacity:.85}
-.work-arrow{position:absolute;right:13px;bottom:13px;width:31px;height:31px;border-radius:50%;background:#ffffff24;display:grid;place-items:center}
-.work-card:nth-child(1){--art:linear-gradient(130deg,#b5a091,#ead8cb 40%,#796a5e)}
-.work-card:nth-child(2){--art:linear-gradient(130deg,#071f1b,#225548 45%,#d0c6b5)}
-.work-card:nth-child(3){--art:linear-gradient(140deg,#8aa5b7,#dce5e6 40%,#73876c)}
-.work-card:nth-child(4){--art:linear-gradient(130deg,#7b8286,#242c33 50%,#bdc3c5)}
-.work-art{position:absolute;inset:0;opacity:.75;background:radial-gradient(ellipse at 70% 35%,#ffffff55 0 8%,transparent 9%),linear-gradient(125deg,transparent 40%,#ffffff20 41% 42%,transparent 43%)}
-.work-card:nth-child(1) .work-art{background:radial-gradient(ellipse at 68% 36%,#e6c5b5 0 15%,transparent 16%),radial-gradient(ellipse at 67% 70%,#4f5a4c 0 22%,transparent 23%)}
-.work-card:nth-child(2) .work-art{background:radial-gradient(ellipse at 72% 30%,#c3a88c 0 11%,transparent 12%),radial-gradient(ellipse at 72% 70%,#344a40 0 25%,transparent 26%)}
-.features{display:grid;grid-template-columns:1.4fr .6fr;gap:26px;align-items:stretch}
-.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 16px}
-.feature{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:750}
-.feature small{display:block;font-size:10px;font-weight:500;color:var(--muted);margin-top:3px}
-.note-card{border:1px solid #e7eaed;border-radius:20px;padding:22px;display:flex;gap:18px;align-items:center;background:#fafbfb;min-height:180px}
-.note-card strong{font-size:15px}
-.note-card p{font-size:12px;color:var(--muted);margin:8px 0 0}
-.note-illustration{position:relative;width:90px;height:110px;flex:0 0 auto;background:#e5ece8;border-radius:20px}
-.note-illustration:before{content:"";position:absolute;width:48px;height:58px;background:#d5b9a4;border-radius:24px 24px 14px 14px;left:21px;top:12px}
-.note-illustration:after{content:"";position:absolute;width:70px;height:42px;background:#779687;border-radius:25px 25px 12px 12px;left:10px;bottom:0}
-.pricing{background:var(--dark);color:#fff;border-radius:28px;padding:34px;margin:10px auto}
-.pricing-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px}
-.pricing-intro{padding:15px 10px}
-.pricing-intro h2{font-size:clamp(28px,3vw,42px);letter-spacing:-1.6px;line-height:1.08;margin:0 0 14px}
-.pricing-intro p{color:#b7c1c8;font-size:13px;max-width:300px}
-.compare{display:inline-flex;align-items:center;gap:9px;color:#d2d9de;font-size:11px;margin-top:18px}
-.switch{width:29px;height:17px;border-radius:20px;background:#1da66b;position:relative}
-.switch:after{content:"";position:absolute;width:11px;height:11px;border-radius:50%;background:#fff;right:3px;top:3px}
-.price-card{position:relative;background:#fff;color:var(--ink);border-radius:20px;padding:25px 22px;display:flex;flex-direction:column;min-height:430px}
-.price-card.featured{background:#e8f5ed;border:1px solid #a5d8bb}
-.tag{position:absolute;right:18px;top:17px;background:#c7ead5;color:#17643c;border-radius:30px;padding:6px 10px;font-size:9px;font-weight:800}
-.price-card h3{font-size:17px;margin:5px 0 14px}
-.price{font-size:38px;font-weight:900;letter-spacing:-1.6px}
-.price-card p{font-size:11px;color:#69737b;min-height:48px;margin:10px 0 15px}
-.checklist{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:11px;color:#3f4a52}
-.checklist li:before{content:"✓";color:#0c9b58;font-weight:900;margin-right:8px}
-.price-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:auto;padding-top:18px}
-.price-actions .btn{min-width:0;padding:13px 12px;white-space:nowrap}
-.price-card .btn-outline{background:transparent;border:1px solid #8c969f;color:inherit}
-.price-card.featured .btn-outline{border-color:#3c8b65;color:#fff;background:#11191f}
-.price-card .btn-white{background:#fff;border:1px solid #dfe4e8;color:var(--ink)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
-.step{border:1px solid #e7eaed;background:#fff;border-radius:17px;padding:19px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 6px 20px #11191f05}
-.step-num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#e7ecef;font-size:12px;font-weight:850;flex-shrink:0}
-.step strong{font-size:12px;display:block;margin:2px 0 5px}
-.step p{margin:0;color:var(--muted);font-size:10px}
-.final-cta{background:linear-gradient(105deg,#eef7f0,#f8faf8 60%,#e8f3eb);border-radius:25px;padding:32px 36px;display:grid;grid-template-columns:1.4fr 1fr;gap:25px;align-items:center;margin:18px 0 30px}
-.final-cta h2{font-size:clamp(27px,3vw,42px);letter-spacing:-1.5px;line-height:1.08;margin:0 0 10px}
-.final-cta p{font-size:13px;color:#5c6861;margin:0}
-.cta-form{display:flex;gap:8px;flex-wrap:wrap}
-.cta-form input{min-width:0;flex:1;border:1px solid #dce5df;background:#fff;border-radius:13px;padding:14px 15px;outline:none}
-.cta-form input:focus{border-color:var(--green)}
-.micro{font-size:10px;color:#68766e;margin-top:9px}
-.micro span{color:var(--green);margin-right:4px}
-footer{padding:20px 0 30px;border-top:1px solid #edf0f2}
-.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.footer-row p{font-size:10px;color:var(--muted);margin:0}
-.footer-partner{display:flex;align-items:center;gap:8px;font-size:11px;color:#4b555c}
-.footer-partner .partner-mark{width:26px;height:26px;border-radius:8px;font-size:11px}
-
-.modal{position:fixed;inset:0;background:rgba(12,18,22,.58);z-index:100;display:none;align-items:center;justify-content:center;padding:18px}
-.modal.open{display:flex}
-.modal-box{width:min(100%,460px);background:#fff;border-radius:22px;padding:25px;box-shadow:0 25px 80px #0003}
-.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.modal-head h3{font-size:23px;letter-spacing:-.6px;margin:0}
-.close{border:0;background:#f0f2f3;border-radius:50%;width:38px;height:38px;font-size:25px;cursor:pointer;color:#283139}
-.modal-box>p{font-size:13px;color:var(--muted);margin:12px 0 20px}
-.messenger-choices{display:grid;gap:11px}
-.messenger-choices .btn{width:100%;min-height:49px}
-.btn-telegram{background:#229ed9;color:white}
-.btn-max{background:#7356e8;color:white}
-.modal-note{font-size:11px;color:#6b747c;line-height:1.5;margin:3px 0 0}
-@media(max-width:1000px){
-.wrap{width:min(100% - 36px,var(--max))}
-.links{gap:15px}
-.hero-grid{grid-template-columns:1fr 1fr}
-.hero-art{transform:scale(.92);transform-origin:center right;margin-left:-30px}
-.benefits{gap:12px}
-.stats{grid-template-columns:repeat(3,1fr)}
-.partner-card{grid-column:1/-1}
-.portfolio{grid-template-columns:repeat(2,1fr)}
-.features{grid-template-columns:1fr}
-.feature-grid{grid-template-columns:repeat(4,1fr)}
-.pricing-grid{grid-template-columns:1fr 1fr}
-.pricing-intro{grid-column:1/-1}
-.pricing-intro h2{max-width:420px}
-.steps{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:700px){
-header{height:64px}
-.wrap{width:calc(100% - 30px)}
-.nav{gap:10px}
-.brand{font-size:20px}
-.cross,.partner,.links{display:none}
-.nav>.btn{margin-left:auto}
-.hero{background:radial-gradient(ellipse at 70% 45%,#e5e9e9 0%,#f8f9f9 45%,#fff 75%)}
-.hero-grid{display:flex;flex-direction:column;align-items:stretch;gap:0;padding-top:29px;min-height:unset}
-.hero-copy{position:relative;z-index:2}
-h1{font-size:43px;letter-spacing:-1.8px;margin:15px 0}
-.lead{font-size:15px}
-.benefits{gap:8px;justify-content:space-between;margin:21px 0}
-.benefit{font-size:10px;display:block;max-width:31%}
-.benefit .ico{margin-bottom:7px}
-.hero-actions{display:grid;grid-template-columns:1fr 1fr}
-.hero-actions .btn{min-width:0;padding:14px 8px;font-size:12px}
-.social-proof{margin-top:16px}
-.hero-art{height:300px;width:100%;margin:0;transform:none}
-.laptop{width:92%;height:220px;top:38px;right:3%;border-width:6px;border-bottom-width:12px;border-radius:12px}
-.laptop:after{bottom:-12px;height:12px}
-.screen{padding:11px}
-.screen-nav{font-size:7px}
-.screen-copy{top:26%;left:6%;width:48%}
-.screen-copy small{font-size:6px}
-.screen-copy h3{font-size:17px;margin:8px 0}
-.screen-copy p{font-size:7px}
-.screen-cta{font-size:7px;padding:6px}
-.phone{width:110px;height:204px;right:0;bottom:10px;border-width:4px;border-radius:20px;padding:4px}
-.phone-screen{border-radius:14px;padding:15px 6px 6px}
-.notch{width:40px;height:9px;top:3px}
-.phone-screen h4{font-size:10px;margin:10px 0 6px}
-.phone-screen p{font-size:6px}
-.calendar{gap:3px;margin:7px 0}
-.calendar span{font-size:5px;padding:4px 0}
-.phone-cta{font-size:6px;padding:6px}
-.float-card{font-size:8px;padding:8px 9px}
-.float-card small{font-size:7px}
-.float-one{top:10px;left:0}
-.float-two{right:0;top:45px}
-.stats{border-radius:18px;padding:18px 16px;gap:12px;grid-template-columns:repeat(3,1fr)}
-.stat strong{font-size:23px}
-.stat span{font-size:9px}
-.stars{font-size:12px}
-.partner-card{padding:12px;grid-column:1/-1}
-.partner-card strong{font-size:11px}
-.partner-card small{font-size:8px}
-.section-head{align-items:flex-start}
-.section-head h2{font-size:26px}
-.section-head p{font-size:11px}
-.sub-link{font-size:10px;padding-top:7px}
-.portfolio{gap:9px}
-.work-card{height:155px;border-radius:13px}
-.work-label{left:11px;right:11px;bottom:11px}
-.work-label strong{font-size:13px}
-.work-label span{font-size:9px}
-.features{gap:17px}
-.feature-grid{grid-template-columns:repeat(2,1fr);gap:14px 10px}
-.feature{font-size:10px}
-.feature small{font-size:9px}
-.note-card{padding:16px;min-height:120px}
-.note-illustration{width:55px;height:65px}
-.pricing{padding:22px 15px;border-radius:22px}
-.pricing-grid{grid-template-columns:1fr;gap:12px}
-.pricing-intro{padding:5px 4px 10px}
-.pricing-intro h2{font-size:30px}
-.price-card{min-height:unset;padding:20px 17px}
-.price-actions{gap:8px}
-.price-actions .btn{font-size:12px}
-.price{font-size:32px}
-.price-card p{max-width:75%}
-.checklist{gap:7px}
-.steps{grid-template-columns:1fr 1fr;gap:8px}
-.step{padding:13px 10px;gap:9px}
-.step-num{width:30px;height:30px;font-size:10px}
-.step strong{font-size:11px}
-.step p{font-size:9px}
-.final-cta{grid-template-columns:1fr;padding:24px 18px;gap:17px;border-radius:20px}
-.final-cta h2{font-size:30px}
-.final-cta p{font-size:12px}
-.cta-form{display:grid;grid-template-columns:1fr}
-.cta-form input,.cta-form .btn{width:100%}
-.footer-row{align-items:flex-start;flex-direction:column}
-.footer-partner{order:-1}
-}
-@media(prefers-reduced-motion:reduce){
-html{scroll-behavior:auto}
-*,*:before,*:after{transition:none!important}
-}
 .real-work{background:#eef1f3}
-.real-work:before{display:none}
-.real-work:after{z-index:1}
-.real-work .work-label,.real-work .work-arrow{z-index:2}
+.real-work:before{display:none}.real-work:after{z-index:1}.real-work .work-label,.real-work .work-arrow{z-index:2}
 .real-work img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;transition:transform .4s}
 .real-work:hover img{transform:scale(1.045)}
 .real-work .work-label{z-index:1}
+
 .note-illustration{overflow:visible}
 .note-illustration img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% center;border-radius:20px}
 .note-illustration:before{z-index:2;box-shadow:0 3px 8px #11191f18}
 @media(max-width:700px){.note-illustration img{object-position:62% center}}
-.partner{gap:12px}
-.partner .partner-mark{margin-right:0}
+.price-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:auto;padding-top:18px}.price-actions .btn{min-width:0;padding:13px 12px;white-space:nowrap}.price-card .btn-outline{background:transparent;border:1px solid #8c969f;color:inherit}.price-card.featured .btn-outline{border-color:#3c8b65;color:#fff}.real-work:hover img{transform:scale(1.045)}.partner{gap:12px}.partner .partner-mark{margin-right:0}
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Купитьсайт.com">купить<span style="color:#111820">сайт</span><em>.com</em></a>
-    <span class="cross">×</span>
-    <a class="partner" href="https://bloknotservis.ru/" target="_blank" rel="noopener" aria-label="Блокнот — онлайн-запись и платежи">
-      <span class="bloknot-wordmark">Блокнот</span>
-    </a>
-    <nav class="links">
-      <a href="#portfolio">Примеры</a>
-      <a href="#pricing">Тарифы</a>
-      <a href="#steps">Как мы работаем</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a class="btn btn-dark btn-sm" href="#pricing">Выбрать тариф <span>→</span></a>
-  </div>
-</header>
-
+<header><div class="wrap nav">
+<a class="brand" href="#top" aria-label="Купитьсайт.com">купить<span style="color:#111820">сайт</span><em>.com</em></a><span class="cross">×</span>
+<a class="partner" href="https://bloknotservis.ru/" target="_blank" rel="noopener" aria-label="Блокнот — онлайн-запись и платежи"><span class="bloknot-wordmark">BLOKNOT</span></a>
+<nav class="links"><a href="#portfolio">Примеры</a><a href="#pricing">Тарифы</a><a href="#steps">Как мы работаем</a><a href="#faq">FAQ</a></nav>
+<button class="btn btn-dark btn-sm" type="button" data-contact="Здравствуйте! Хочу обсудить создание сайта.">Обсудить проект <span>→</span></button>
+</div></header>
 <main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <h1>Сайт, который <span>привлекает клиентов</span> в твой бизнес</h1>
-      <p class="lead">Современный сайт с онлайн-записью, оплатой и всем необходимым для реальных заявок.</p>
-      <div class="benefits">
-        <div class="benefit"><span class="ico">♧</span><b>Больше клиентов<br>и заявок</b></div>
-        <div class="benefit"><span class="ico">▦</span><b>Онлайн-запись<br>и оплата</b></div>
-        <div class="benefit"><span class="ico">▥</span><b>Адаптация под<br>все устройства</b></div>
-      </div>
-      <div class="hero-actions">
-        <a class="btn btn-dark" href="#pricing">Выбрать тариф <span>→</span></a>
-        <a class="btn btn-light" href="#portfolio"><span>▶</span> Посмотреть примеры</a>
-      </div>
-      <div class="social-proof">
-        <div class="avatars"><span class="avatar"></span><span class="avatar"></span><span class="avatar"></span><span class="avatar"></span></div>
-        <div><strong>Сайт под задачи твоего бизнеса</strong><br><span style="color:#6d7780">От идеи до готового запуска</span></div>
-      </div>
-    </div>
+<section class="hero"><div class="wrap hero-grid">
+<div class="hero-copy">
 
-    <div class="hero-art" aria-label="Пример сайта на ноутбуке и онлайн-записи на телефоне">
-      <div class="float-card float-one">♙ Новая заявка<small>с сайта · только что</small></div>
-      <div class="float-card float-two">▦ Онлайн-запись<small>в 2 клика · доступна</small></div>
-      <div class="laptop">
-        <div class="screen">
-          <div class="screen-nav"><b>LUMIÈRE</b><span>Услуги　 О нас　 Отзывы　　+7 999 123-45-67</span></div>
-          <div class="screen-copy">
-            <small>СТУДИЯ КРАСОТЫ</small>
-            <h3>Естественная<br>красота —<br>ваш стиль</h3>
-            <p>Уход, внимание и результат, который заметен.</p>
-            <span class="screen-cta">Записаться　→</span>
-          </div>
-          <div class="plant"></div>
-        </div>
-      </div>
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="notch"></div>
-          <h4>Онлайн-запись<br>в 2 клика</h4>
-          <p>Выберите удобную дату</p>
-          <div class="calendar"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>10</span><span>11</span><span class="active">12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></div>
-          <p>Выберите время</p>
-          <div class="calendar"><span>10:00</span><span>11:00</span><span>12:00</span><span>13:00</span></div>
-          <div class="phone-cta">Записаться</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap">
-  <div class="stats">
-    <div class="stat"><strong>2 тарифа</strong><span>Понятная стоимость без сюрпризов</span></div>
-    <div class="stat"><strong>1–3 дня</strong><span>Целевой срок разработки после брифа</span></div>
-    <div class="stat"><strong>Под ключ</strong><span>От изучения ниши до запуска</span></div>
-    <a class="partner-card" href="https://bloknotservis.ru/" target="_blank" rel="noopener">
-      <div>
-        <small>Сайт + онлайн-запись и платежи</small>
-        <small>Сделано совместно с Блокнот Сервис</small>
-        <strong class="bloknot-wordmark">Блокнот</strong>
-        <small>Онлайн-запись, клиенты, платежи</small>
-      </div>
-      <span class="circle-arrow">→</span>
-    </a>
-  </div>
+<h1>Сайт, который <span>привлекает клиентов</span> в твой бизнес</h1>
+<p class="lead">Современный сайт с онлайн-записью, оплатой и всем необходимым для реальных заявок.</p>
+<div class="benefits">
+<div class="benefit"><span class="ico">♧</span><b>Больше клиентов<br>и заявок</b></div>
+<div class="benefit"><span class="ico">▦</span><b>Онлайн-запись<br>и оплата</b></div>
+<div class="benefit"><span class="ico">▥</span><b>Адаптация под<br>все устройства</b></div>
 </div>
-
-<section id="portfolio">
-  <div class="wrap">
-    <div class="section-head">
-      <div><h2>Примеры готовых сайтов</h2><p>Откройте проекты и посмотрите сайты вживую.</p></div>
-      <a class="sub-link" href="#contact">Обсудить свой проект　→</a>
-    </div>
-    <div class="portfolio">
-      <a class="work-card real-work" href="https://tissvi.ru/?utm_source=yandex&amp;utm_medium=cpc&amp;utm_campaign=search_tissvi&amp;etext=2202.nnqG1_3kG9DIRyo77Cl5PZ4pK4_ebIP5uNBPMYH98V10YWFweWxneGljbnpneHRs.df7d7937253f8c2b62c0c798f973432604d51e78&amp;yclid=4067033924676878335#about" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт TISSVI">
-        <img src="/assets/tissvi-preview.jpg" alt="Визуальное превью сайта TISSVI" loading="lazy">
-        <div class="work-label"><small>TISSVI</small><strong>Сайт компании</strong><span>Открыть проект</span></div><span class="work-arrow">↗</span>
-      </a>
-      <a class="work-card real-work" href="https://doctor-arts.ru/ispravlenie-prikusa-sochi?utm_source=yandex&amp;utm_medium=cpc&amp;utm_campaign=714900534&amp;utm_content=1922737727839054754&amp;utm_term=---autotargeting&amp;etext=2202.vP-X98Jk5Cu_MIMndBNFCWs_xo88DXe_bLSLlrxuCRJ5amtraWZjcmRiaGlsemVu.3cf1437b844dee815e8a19b6d6ad2f7b42eaf358&amp;yclid=942390095992061951" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт Doctor Arts">
-        <img src="/assets/doctor-arts-preview.jpg" alt="Визуальное превью сайта клиники Doctor Arts" loading="lazy">
-        <div class="work-label"><small>DOCTOR ARTS</small><strong>Стоматология</strong><span>Исправление прикуса</span></div><span class="work-arrow">↗</span>
-      </a>
-      <a class="work-card real-work" href="https://all-on-4.saycheese.clinic/?utm_source=yandex&amp;utm_medium=cpc&amp;utm_campaign=umnaya&amp;type=search&amp;source=none&amp;block=premium&amp;position=1&amp;utm_term=---autotargeting&amp;etext=2202.vP-X98Jk5Cu_MIMndBNFCWs_xo88DXe_bLSLlrxuCRJ5amtraWZjcmRiaGlsemVu.3cf1437b844dee815e8a19b6d6ad2f7b42eaf358&amp;yclid=7269651227650818047" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт Say Cheese">
-        <img src="/assets/saycheese-preview.jpg" alt="Визуальное превью сайта Say Cheese" loading="lazy">
-        <div class="work-label"><small>SAY CHEESE</small><strong>Стоматология</strong><span>Имплантация All-on-4</span></div><span class="work-arrow">↗</span>
-      </a>
-      <a class="work-card real-work" href="https://posolstvosochi.com/contacts" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт Посольство красоты">
-        <img src="/assets/posolstvo-preview.jpg" alt="Визуальное превью сайта Посольство красоты" loading="lazy">
-        <div class="work-label"><small>ПОСОЛЬСТВО КРАСОТЫ</small><strong>Салон красоты</strong><span>Услуги и контакты</span></div><span class="work-arrow">↗</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="section-head"><div><h2>Что входит в разработку</h2><p>Не нужно разбираться в технологиях — мы соберём всё в одном месте.</p></div></div>
-    <div class="features">
-      <div class="feature-grid">
-        <div class="feature"><span class="ico">⌕</span><span>Анализ ниши<small>и конкурентов</small></span></div>
-        <div class="feature"><span class="ico">◇</span><span>Структура, тексты<small>и современный дизайн</small></span></div>
-        <div class="feature"><span class="ico">▣</span><span>Адаптация под<small>все устройства</small></span></div>
-        <div class="feature"><span class="ico">▦</span><span>Онлайн-запись<small>и оплата в расширенном тарифе</small></span></div>
-        <div class="feature"><span class="ico">⌘</span><span>Подключение домена<small>и размещение</small></span></div>
-        <div class="feature"><span class="ico">⌕</span><span>Базовая SEO-настройка<small>для поисковых систем</small></span></div>
-        <div class="feature"><span class="ico">♧</span><span>Поддержка и инструкции<small>после запуска</small></span></div>
-      </div>
-      <aside class="note-card">
-        <div class="note-illustration"><img src="/assets/business-consultant.png" alt="Специалист помогает с созданием сайта" loading="lazy"></div>
-        <div><strong>Не нужно разбираться в технологиях</strong><p>Ты рассказываешь о бизнесе — мы делаем сайт, который помогает получать заявки.</p></div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<section id="pricing">
-  <div class="wrap pricing">
-    <div class="pricing-grid">
-      <div class="pricing-intro"><h2>Выберите подходящий тариф</h2><p>Фиксированная цена. Состав работ известен заранее.</p><div class="compare"><span class="switch"></span> Два понятных решения для бизнеса</div></div>
-      <article class="price-card featured">
-        <span class="tag">Популярный</span>
-        <h3>Сайт под ключ</h3>
-        <div class="price">39 990 ₽</div>
-        <p>Многостраничный сайт для привлечения клиентов. Изучение ниши, тексты, дизайн и запуск.</p>
-        <ul class="checklist">
-          <li>Анализ ниши и конкурентов</li><li>Структура и подготовка текстов</li><li>Современный индивидуальный дизайн</li><li>Адаптация под все устройства</li><li>Формы заявок и мессенджеры</li><li>Подключение домена и запуск</li>
-        </ul>
-        <div class="price-actions">
-          <a class="btn btn-outline" href="#contact" data-plan="Сайт под ключ — 39 990 ₽">Обсудить</a>
-          <a class="btn btn-white" href="https://bloknotservis.ru/website-pricing.html" target="_blank" rel="noopener noreferrer">Оплатить　→</a>
-        </div>
-      </article>
-      <article class="price-card">
-        <h3>Сайт + оплата</h3>
-        <div class="price">69 900 ₽</div>
-        <p>Сайт с онлайн-записью, приёмом платежей и базовыми юридическими страницами.</p>
-        <ul class="checklist">
-          <li>Всё из тарифа «Сайт под ключ»</li><li>Онлайн-запись для клиентов</li><li>Подключение оплаты через CloudPayments*</li><li>Страница заказа и результата оплаты</li><li>Страницы оферты и политики</li><li>Тестирование и инструкция</li>
-        </ul>
-        <div class="price-actions">
-          <a class="btn btn-outline" href="#contact" data-plan="Сайт + оплата — 69 900 ₽">Обсудить</a>
-          <a class="btn btn-white" href="https://bloknotservis.ru/website-pricing.html" target="_blank" rel="noopener noreferrer">Оплатить　→</a>
-        </div>
-      </article>
-    </div>
-    <p style="font-size:10px;color:#aab4bb;margin:20px 0 0">*Подключение платёжного провайдера возможно после одобрения клиента провайдером; комиссии провайдера и платные сторонние сервисы оплачиваются отдельно. Юридические документы предоставляются по согласованным требованиям и требуют проверки под конкретный бизнес.</p>
-  </div>
-</section>
-
-<section id="steps">
-  <div class="wrap">
-    <div class="section-head"><div><h2>Как мы создадим ваш сайт</h2><p>Четыре шага от идеи до публикации.</p></div></div>
-    <div class="steps">
-      <div class="step"><span class="step-num">01</span><div><strong>Заявка</strong><p>Рассказываете, чем занимаетесь и какие задачи должен решать сайт.</p></div></div>
-      <div class="step"><span class="step-num">02</span><div><strong>Анализ</strong><p>Изучаем нишу, конкурентов и готовим структуру.</p></div></div>
-      <div class="step"><span class="step-num">03</span><div><strong>Разработка</strong><p>Создаём сайт, показываем результат и вносим согласованные правки.</p></div></div>
-      <div class="step"><span class="step-num">04</span><div><strong>Запуск</strong><p>Подключаем домен, формы и передаём готовый сайт.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap">
-    <div class="section-head"><div><h2>Частые вопросы</h2></div></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
-      <details style="border:1px solid var(--line);border-radius:15px;padding:16px"><summary style="font-weight:750;cursor:pointer">Когда сайт будет готов?</summary><p style="font-size:13px;color:var(--muted)">Обычно 1–3 рабочих дня после получения материалов и согласования задачи. Срок зависит от сложности проекта.</p></details>
-      <details style="border:1px solid var(--line);border-radius:15px;padding:16px"><summary style="font-weight:750;cursor:pointer">Можно ли добавить онлайн-запись?</summary><p style="font-size:13px;color:var(--muted)">Да. Сценарий онлайн-записи согласуем заранее; для расписания и управления клиентами можно использовать Блокнот Сервис.</p></details>
-      <details style="border:1px solid var(--line);border-radius:15px;padding:16px"><summary style="font-weight:750;cursor:pointer">Кому принадлежит сайт?</summary><p style="font-size:13px;color:var(--muted)">Условия передачи исходников, домена и доступов фиксируются в договоре до начала работ.</p></details>
-    </div>
-  </div>
-</section>
-
-<div class="wrap" id="contact">
-  <div class="final-cta">
-    <div><h2>Давайте сделаем сайт,<br>который привлечёт клиентов</h2><p>Оставьте контакт — обсудим задачу и подберём подходящее решение.</p></div>
-    <div>
-      <form class="cta-form" id="leadForm">
-        <input id="contactInput" type="text" required placeholder="Ваш Telegram или телефон" aria-label="Ваш Telegram или телефон">
-        <button class="btn btn-dark" type="submit">Обсудить проект　→</button>
-      </form>
-      <div class="micro"><span>✓</span> Без обязательств　 <span>✓</span> Можно просто задать вопрос</div>
-    </div>
-  </div>
+<div class="hero-actions"><a class="btn btn-dark" href="#pricing">Выбрать тариф <span>→</span></a><a class="btn btn-light" href="#portfolio"><span>▶</span> Посмотреть примеры</a></div>
+<div class="social-proof"><div class="avatars"><span class="avatar"></span><span class="avatar"></span><span class="avatar"></span><span class="avatar"></span></div><div><strong>Сайт под задачи твоего бизнеса</strong><br><span style="color:#6d7780">От идеи до готового запуска</span></div></div>
 </div>
+<div class="hero-art" aria-label="Пример сайта на ноутбуке и онлайн-записи на телефоне">
+<div class="float-card float-one">♙ Новая заявка<small>с сайта · только что</small></div><div class="float-card float-two">▦ Онлайн-запись<small>в 2 клика · доступна</small></div>
+<div class="laptop"><div class="screen"><div class="screen-nav"><b>LUMIÈRE</b><span>Услуги　 О нас　 Отзывы　　+7 999 123-45-67</span></div><div class="screen-copy"><small>СТУДИЯ КРАСОТЫ</small><h3>Естественная<br>красота —<br>ваш стиль</h3><p>Уход, внимание и результат, который заметен.</p><span class="screen-cta">Записаться　→</span></div></div></div>
+<div class="phone"><div class="phone-screen"><div class="notch"></div><h4>Онлайн-запись<br>в 2 клика</h4><p>Выберите удобную дату</p><div class="calendar"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>10</span><span>11</span><span class="active">12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></div><p>Выберите время</p><div class="calendar"><span>10:00</span><span>11:00</span><span>12:00</span><span>13:00</span></div><div class="phone-cta">Записаться</div></div></div>
+</div>
+</div></section>
+<div class="wrap"><div class="stats">
+<div class="stat"><strong>2 тарифа</strong><span>Понятная стоимость без сюрпризов</span></div><div class="stat"><strong>1–3 дня</strong><span>Целевой срок разработки после брифа</span></div><div class="stat"><strong>Под ключ</strong><span>От изучения ниши до запуска</span></div>
+<a class="partner-card" href="https://bloknotservis.ru/" target="_blank" rel="noopener"><div><small>Сайт + онлайн-запись и платежи</small><small>Сделано совместно с Блокнот Сервис</small><strong class="bloknot-wordmark">BLOKNOT</strong><small>Онлайн-запись, клиенты, платежи</small></div><span class="circle-arrow">→</span></a>
+</div></div>
+<section id="portfolio"><div class="wrap"><div class="section-head"><div><h2>Примеры готовых сайтов</h2><p>Откройте проекты и посмотрите сайты вживую.</p></div><a class="sub-link" href="#contact" data-contact="Здравствуйте! Хочу обсудить создание сайта.">Обсудить свой проект　→</a></div>
+<div class="portfolio">
+<a class="work-card real-work" href="https://naturel-studio.ru/" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт Naturel Studio"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85" alt="Интерьер студии красоты Naturel" loading="lazy"><div class="work-label"><small>NATUREL STUDIO</small><strong>Студия красоты</strong><span>Открыть проект ↗</span></div><span class="work-arrow">↗</span></a>
+<a class="work-card real-work" href="https://gorod-krasoti.com/" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт Город красоты"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85" alt="Мастер работает с волосами в салоне красоты" loading="lazy"><div class="work-label"><small>ГОРОД КРАСОТЫ</small><strong>Салон красоты</strong><span>Открыть проект ↗</span></div><span class="work-arrow">↗</span></a>
+<a class="work-card real-work" href="https://crystalstom.ru/" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт Crystal Stom"><img src="https://images.unsplash.com/photo-1667133295308-9ef24f71952e?auto=format&fit=crop&w=900&q=85" alt="Мужчина с красивой естественной улыбкой" loading="lazy"><div class="work-label"><small>CRYSTAL STOM</small><strong>Стоматология</strong><span>Открыть проект ↗</span></div><span class="work-arrow">↗</span></a>
+<a class="work-card real-work" href="https://alfadenta42.ru/" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт Альфа Дента"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85" alt="Современный красивый интерьер стоматологического кабинета" loading="lazy"><div class="work-label"><small>ALFA DENTA</small><strong>Стоматологическая клиника</strong><span>Открыть проект ↗</span></div><span class="work-arrow">↗</span></a>
+</div></div></section>
+<section id="pricing"><div class="wrap pricing"><div class="pricing-grid">
+<div class="pricing-intro"><h2>Выберите подходящий тариф</h2><p>Фиксированная цена. Состав работ известен заранее.</p><div class="compare"><span class="switch"></span> Два понятных решения для бизнеса</div></div>
+<article class="price-card featured"><span class="tag">Популярный</span><h3>Сайт под ключ</h3><div class="price">49 900 ₽</div><p>Многостраничный сайт для привлечения клиентов. Изучение ниши, тексты, дизайн и запуск.</p><ul class="checklist"><li>Анализ ниши и конкурентов</li><li>Структура и подготовка текстов</li><li>Современный индивидуальный дизайн</li><li>Адаптация под все устройства</li><li>Формы заявок и мессенджеры</li><li>Подключение домена и запуск</li></ul><div class="price-actions"><a class="btn btn-outline" href="#contact" data-plan="Сайт под ключ — 49 900 ₽">Обсудить</a><a class="btn btn-white" href="https://bloknotservis.ru/website-pricing.html" target="_blank" rel="noopener noreferrer">Оплатить　→</a></div></article>
+<article class="price-card"><h3>Сайт + оплата</h3><div class="price">79 900 ₽</div><p>Сайт с онлайн-записью, приёмом платежей и базовыми юридическими страницами.</p><ul class="checklist"><li>Всё из тарифа «Сайт под ключ»</li><li>Онлайн-запись для клиентов</li><li>Подключение оплаты через CloudPayments* </li><li>Страница заказа и результата оплаты</li><li>Страницы оферты и политики</li><li>Тестирование и инструкция</li></ul><div class="price-actions"><a class="btn btn-outline" href="#contact" data-plan="Сайт + оплата — 79 900 ₽">Обсудить</a><a class="btn btn-white" href="https://bloknotservis.ru/website-pricing.html" target="_blank" rel="noopener noreferrer">Оплатить　→</a></div></article>
+</div><p style="font-size:10px;color:#aab4bb;margin:20px 0 0">*Подключение платёжного провайдера возможно после одобрения клиента провайдером; комиссии провайдера и платные сторонние сервисы оплачиваются отдельно. Юридические документы предоставляются по согласованным требованиям и требуют проверки под конкретный бизнес.</p>
+</div></section>
+<section id="steps"><div class="wrap"><div class="section-head"><div><h2>Как мы создадим ваш сайт</h2><p>Четыре шага от идеи до публикации.</p></div></div><div class="steps">
+<div class="step"><span class="step-num">01</span><div><strong>Заявка</strong><p>Рассказываете, чем занимаетесь и какие задачи должен решать сайт.</p></div></div>
+<div class="step"><span class="step-num">02</span><div><strong>Анализ</strong><p>Изучаем нишу, конкурентов и готовим структуру.</p></div></div>
+<div class="step"><span class="step-num">03</span><div><strong>Разработка</strong><p>Создаём сайт, показываем результат и вносим согласованные правки.</p></div></div>
+<div class="step"><span class="step-num">04</span><div><strong>Запуск</strong><p>Подключаем домен, формы и передаём готовый сайт.</p></div></div>
+</div></div></section>
+<section id="faq"><div class="wrap"><div class="section-head"><div><h2>Частые вопросы</h2></div></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+<details style="border:1px solid var(--line);border-radius:15px;padding:16px"><summary style="font-weight:750;cursor:pointer">Когда сайт будет готов?</summary><p style="font-size:13px;color:var(--muted)">Обычно 1–3 рабочих дня после получения материалов и согласования задачи. Срок зависит от сложности проекта.</p></details>
+<details style="border:1px solid var(--line);border-radius:15px;padding:16px"><summary style="font-weight:750;cursor:pointer">Можно ли добавить онлайн-запись?</summary><p style="font-size:13px;color:var(--muted)">Да. Сценарий онлайн-записи согласуем заранее; для расписания и управления клиентами можно использовать Блокнот Сервис.</p></details>
+<details style="border:1px solid var(--line);border-radius:15px;padding:16px"><summary style="font-weight:750;cursor:pointer">Кому принадлежит сайт?</summary><p style="font-size:13px;color:var(--muted)">Условия передачи исходников, домена и доступов фиксируются в договоре до начала работ.</p></details>
+</div></div></section>
+<section id="contact"><div class="wrap"><div class="final-cta"><div><h2>Давайте сделаем сайт,<br>который привлечёт клиентов</h2><p>Нажмите на кнопку — выберите удобный мессенджер, и обсудим ваш проект.</p></div><div class="final-cta-action"><button class="btn btn-dark" type="button" data-contact="Здравствуйте! Хочу обсудить создание сайта.">Обсудить проект　→</button></div></div></div></section>
 </main>
-
-<footer>
-  <div class="wrap footer-row">
-    <a class="brand" href="#top">купить<span style="color:#111820">сайт</span><em>.com</em></a>
-    <p>© 2026 купитьсайт.com · Разработка сайтов для бизнеса</p>
-    <a class="footer-partner" href="https://bloknotservis.ru/" target="_blank" rel="noopener"><span class="bloknot-wordmark">Блокнот</span></a>
-  </div>
-</footer>
-
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-box">
-    <div class="modal-head">
-      <h3 id="modalTitle">Напишите нам</h3>
-      <button class="close" id="closeModal" aria-label="Закрыть">×</button>
-    </div>
-    <p id="contactPrompt">Выберите удобный мессенджер — откроется связь с нами.</p>
-    <div class="messenger-choices">
-      <a class="btn btn-telegram" id="telegramChoice" href="https://t.me/you_website" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a>
-      <button class="btn btn-max" id="maxChoice" type="button">Написать в MAX ↗</button>
-      <p class="modal-note">MAX: +7 902 403-42-42. Нажатие откроет MAX и скопирует номер для поиска контакта. Для прямого перехода в чат MAX нужна персональная ссылка на ваш профиль.</p>
-    </div>
-  </div>
-</div>
-
+<footer><div class="wrap footer-row"><a class="brand" href="#top">купить<span style="color:#111820">сайт</span><em>.com</em></a><p>© 2026 купитьсайт.com · Разработка сайтов для бизнеса</p><a class="footer-partner" href="https://bloknotservis.ru/" target="_blank" rel="noopener"><span class="bloknot-wordmark">BLOKNOT</span></a></div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><div class="modal-head"><h3 id="modalTitle">Напишите нам</h3><button class="close" id="closeModal" aria-label="Закрыть">×</button></div><p id="contactPrompt">Выберите удобный мессенджер — откроется связь с нами.</p><div class="messenger-choices"><a class="btn btn-telegram" id="telegramChoice" href="https://t.me/you_website" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a><a class="btn btn-max" id="maxChoice" href="https://max.ru/u/f9LHodD0cOLPI6sgdO_y7eYv6jzceeRZGEELsdhqIzJ4u2YlzDuFWQ4WLzA" target="_blank" rel="noopener noreferrer">Написать в MAX ↗</a><p class="modal-note">Выберите удобный мессенджер — ответим и обсудим ваш проект.</p></div></div></div>
 <script>
-const modal = document.getElementById('modal');
-const telegramChoice = document.getElementById('telegramChoice');
-const maxChoice = document.getElementById('maxChoice');
+(function(){
+  const modal = document.getElementById('modal');
+  const telegramChoice = document.getElementById('telegramChoice');
+  const maxChoice = document.getElementById('maxChoice');
+  const telegramBase = 'https://t.me/you_website';
+  const maxUrl = 'https://max.ru/u/f9LHodD0cOLPI6sgdO_y7eYv6jzceeRZGEELsdhqIzJ4u2YlzDuFWQ4WLzA';
+  const defaultMessage = 'Здравствуйте! Хочу обсудить создание сайта.';
 
-function openContactChooser(message = '') {
-  const contactMessage = message || 'Здравствуйте! Хочу обсудить создание сайта.';
-  const tgUrl = 'https://t.me/you_website?text=' + encodeURIComponent(contactMessage);
-  telegramChoice.href = tgUrl;
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
+  // Keep the direct messenger destinations available even if JavaScript is blocked.
+  telegramChoice.href = telegramBase;
+  maxChoice.href = maxUrl;
 
-function closeModal() {
-  modal.classList.remove('open');
-  document.body.style.overflow = '';
-}
+  function openContactChooser(message) {
+    const contactMessage = message || defaultMessage;
+    telegramChoice.href = telegramBase + '?text=' + encodeURIComponent(contactMessage);
+    maxChoice.href = maxUrl;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
 
-document.querySelectorAll('[data-plan]').forEach(el => {
-  el.addEventListener('click', e => {
-    e.preventDefault();
-    openContactChooser('Здравствуйте! Хочу обсудить: ' + el.dataset.plan + '.');
+  document.querySelectorAll('[data-contact]').forEach(function(el) {
+    el.addEventListener('click', function(event) {
+      event.preventDefault();
+      openContactChooser(el.getAttribute('data-contact') || defaultMessage);
+    });
   });
-});
-
-document.getElementById('closeModal').addEventListener('click', closeModal);
-
-modal.addEventListener('click', e => {
-  if (e.target === modal) closeModal();
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
-
-document.getElementById('leadForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const contact = document.getElementById('contactInput').value.trim();
-  openContactChooser('Здравствуйте! Хочу обсудить создание сайта. Мой контакт: ' + contact + '.');
-});
-
-maxChoice.addEventListener('click', async () => {
-  const number = '+7 902 403-42-42';
-  try {
-    await navigator.clipboard.writeText(number);
-  } catch (e) {}
-  window.open('https://max.ru/', '_blank', 'noopener,noreferrer');
-});
+  document.querySelectorAll('[data-plan]').forEach(function(el) {
+    el.addEventListener('click', function(event) {
+      event.preventDefault();
+      openContactChooser('Здравствуйте! Хочу обсудить: ' + el.getAttribute('data-plan') + '.');
+    });
+  });
+  document.getElementById('closeModal').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(event) { if (event.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(event) { if (event.key === 'Escape') closeModal(); });
+})();
 </script>
 </body>
 </html>
